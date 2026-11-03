@@ -29,7 +29,10 @@ permissions:
   contents: read
 
 env:
-  FEDORA_VERS: '43 44'
+  # Fedora releases served from rpm/fedora/<N>/. Packages are built for
+  # 44 and 45 only; 43 stays here so its existing packages keep being
+  # indexed, and is dropped at Fedora 43's end of life.
+  FEDORA_VERS: '43 44 45'
   UBUNTU_VER: '24.04'
   DEBIAN_VER: 'trixie'
 
@@ -38,7 +41,7 @@ jobs:
     name: Regenerate RPM + DEB repositories
     runs-on: ubuntu-latest
     container:
-      image: fedora:43
+      image: fedora:44
 
     defaults:
       run:

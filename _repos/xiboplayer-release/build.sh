@@ -1,12 +1,13 @@
 #!/bin/bash
 # Build xiboplayer-release RPMs for multiple Fedora versions
 # Usage: ./build.sh [version...]
-# Default: builds for Fedora 43 and 44
+# Default: builds for Fedora 44 and 45
 
 set -euo pipefail
 
 SPEC_DIR="$(cd "$(dirname "$0")" && pwd)"
-VERSIONS=("${@:-43 44}")
+VERSIONS=("$@")
+[ ${#VERSIONS[@]} -gt 0 ] || VERSIONS=(44 45)
 
 # Setup rpmbuild tree
 mkdir -p ~/rpmbuild/{SPECS,SOURCES,BUILD,RPMS,SRPMS}

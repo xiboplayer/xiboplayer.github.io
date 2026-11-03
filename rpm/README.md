@@ -22,7 +22,7 @@ run; the in-tree copy is canonical:
 
 ## TRANSIENT OUTPUT (regenerated on every workflow run)
 
-- `fedora/{43,44}/{x86_64,aarch64,noarch,SRPMS}/repodata/*` — repodata
+- `fedora/{43,44,45}/{x86_64,aarch64,noarch,SRPMS}/repodata/*` — repodata
   produced by `createrepo_c` inside the GitHub Actions runner.
   `update-repos.yml` downloads RPMs from R2 into these paths, runs
   `createrepo_c`, then uploads everything back to R2. The files

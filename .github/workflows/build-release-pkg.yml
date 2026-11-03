@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        fedora: [43, 44]
+        fedora: [44, 45]
     container:
       image: fedora:${{ matrix.fedora }}
 
@@ -120,7 +120,7 @@ jobs:
     name: Build DEB
     runs-on: ubuntu-latest
     container:
-      image: fedora:43
+      image: fedora:44
 
     steps:
       - name: Install git
